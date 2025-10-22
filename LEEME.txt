@@ -1,0 +1,29 @@
+Pokémon Definitive es un juego de consola desarrollado en Python, inspirado en la primera generación de Pokémon.
+Permite combatir, capturar, subir de nivel y evolucionar a los 151 Pokémon originales, con un sistema de combate por turnos y guardado automático.
+
+Características principales
+
+Pokédex completa con los 151 Pokémon originales, descargada automáticamente o cargada desde un archivo local (pokefile.pkl).
+
+Combate por turnos con ataques, tipos, STAB y efectividad según el tipo del movimiento.
+
+Captura con Pokéballs, donde la probabilidad depende del HP y del estado del Pokémon enemigo.
+
+Sistema de experiencia, nivel y evolución automática basado en una tabla clásica de evoluciones.
+
+Guardado y carga de partidas en la carpeta /saves.
+
+Modo TEXTER (God Mode) para pruebas automáticas o para completar la Pokédex al 100%.
+
+Código modular y limpio, fácil de extender o integrar con una futura interfaz gráfica (por ejemplo, Tkinter).
+
+Estructura del proyecto
+Archivo	Descripción
+pokemon_game.py	Archivo principal del juego y bucle general de ejecución.
+combat_ui.py	Sistema de menús, ayuda, y modo TEXTER.
+battle_ui.py	Lógica de combate, turnos, capturas y resultados.
+balance_system.py	Fórmulas de daño, experiencia y subida de nivel.
+pokemon_evolution.py	Tabla y funciones de evolución por nivel.
+pokemon_types.py	Tabla de tipos y cálculo de efectividad.
+pokedex.py	Descarga o carga del archivo pokefile.pkl con los 151 Pokémon.
+save_system.py	Gestión de guardado y carga de partidas.

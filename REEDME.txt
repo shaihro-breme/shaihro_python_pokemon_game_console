@@ -1,0 +1,93 @@
+Pokemon Definitive is a console game written in Python inspired by the original Gen I titles. The game implements turn-based battles, capture mechanics, experience and evolution, a Pokedex of 151 Pokemon, save/load support and a developer God mode for automated testing
+
+Features
+
+151 original Pokemon loaded from a scraped Pokedex or from a local cache file
+
+Turn-based combat with attacks, types, STAB and type effectiveness
+
+Capture mechanics with Pokeballs and status-based modifiers
+
+Experience, level up and evolution table
+
+Save and load game profiles stored in saves folder
+
+God mode (Texter) to automate capture and testing
+
+Modular codebase for easy extension and UI upgrades
+
+Requirements
+
+Python 3.10+
+
+pip install requests-html
+
+Installation
+
+clone repository
+
+create virtualenv and activate it
+
+pip install -r requirements.txt or pip install requests-html
+
+run python pokemon_game.py to start
+
+Usage
+
+Start the game and choose New Game, Load Game or God Mode
+
+During battle use commands:
+
+A to attack
+
+P to throw a Pokeball
+
+V to use a healing potion
+
+C to change Pokemon
+
+Save files are stored in the saves folder, each save named name_index.pkl
+
+Game mechanics overview
+
+Damage is based on attack power, attacker level, STAB (same-type attack bonus), type effectiveness and a small random factor
+
+Type effectiveness multipliers:
+
+weakness multiplies damage (1.33 per weakness)
+
+resistance reduces damage (0.9 per resistance)
+
+immuity sets multiplier to 0
+
+Capture probabilities depend on enemy HP and stunned status, and god mode forces capture
+
+Experience yields are based on levels of winner and loser with slight randomness
+
+Evolution table triggers when a Pokemon reaches the required level
+
+Project structure
+
+pokemon_game.py main entry and high level loop
+
+combat_ui.py menu, help and god mode profile
+
+battle_ui.py battle flow, player and enemy turns, capture logic
+
+balance_system.py damage and experience math and level up
+
+pokemon_evolution.py evolution rules and function
+
+pokemon_types.py type chart and effectiveness function
+
+pokedex.py fetch or load pokefile.pkl with all 151 Pokemon
+
+save_system.py save and load helpers
+
+Development notes
+
+code is modular; to add features implement or extend the corresponding module
+
+keep consistent keys in pokemon dicts: name, dex_id, level, current_health, base_health, current_exp, type, attacks
+
+attacks entries must include name, type, damage and min_level
